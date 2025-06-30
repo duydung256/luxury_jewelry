@@ -1,0 +1,136 @@
+        /* Smooth scrolling for the entire document */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Playfair Display", serif;
+        }
+
+        .hero-section {
+            background-image: url("img/bg.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .collection-card {
+            overflow: hidden;
+        }
+
+        .collection-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .collection-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .collection-card:hover .collection-overlay {
+            opacity: 1;
+        }
+
+        input[type="email"] {
+            outline: none;
+        }
+
+        input[type="email"]:focus {
+            border-color: #d4af37;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .carousel-control.left {
+            left: 10px;
+        }
+
+        .carousel-control.right {
+            right: 10px;
+        }
+
+        /* Mobile Navigation Styles */
+        .mobile-nav {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav.show {
+            display: block !important;
+        }
+
+        /* Scrollbar Hide */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Mobile Responsive Carousel Controls */
+        @media (max-width: 640px) {
+            .carousel-control {
+                display: none;
+            }
+        }
+
+        /* Mobile Search Fix */
+        .mobile-search {
+            position: relative;
+        }
