@@ -33,6 +33,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/fav2.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -98,10 +99,18 @@
         </nav>
     </header>
     <!-- Hero Section -->
-    <section id="hero" class="hero-section w-full h-[500px] sm:h-[600px] relative">
-        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-full flex items-center">
-            <div class="w-full md:w-1/2 text-white z-10">
+    <section id="hero" class="hero-section w-full h-[500px] sm:h-[600px] relative overflow-hidden">
+        <!-- Background Slideshow -->
+        <div class="hero-slideshow absolute inset-0">
+            <div class="slide active" style="background-image: url('img/bg.jpg')"></div>
+            <div class="slide" style="background-image: url('img/bg3.jpg')"></div>
+            <div class="slide" style="background-image: url('img/bg2.jpg')"></div>
+            <div class="slide" style="background-image: url('img/bg4.jpg')"></div>
+            <div class="slide" style="background-image: url('img/bg5.jpg')"></div>
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-full flex items-center relative z-20">
+            <div class="w-full md:w-1/2 text-white">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 leading-tight">
                     永遠のエレガンス、<br />モダンな優雅さ
                 </h2>
@@ -113,6 +122,21 @@
                     コレクションを見る
                 </a>
             </div>
+        </div>
+
+        <!-- Slideshow Dots (Optional) -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+            <button
+                class="slide-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all active"
+                data-slide="0"></button>
+            <button class="slide-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"
+                data-slide="1"></button>
+            <button class="slide-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"
+                data-slide="2"></button>
+            <button class="slide-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"
+                data-slide="3"></button>
+            <button class="slide-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"
+                data-slide="4"></button>
         </div>
     </section>
     <!-- Featured Collections -->
@@ -127,8 +151,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Collection 1 -->
                 <div class="collection-card rounded-lg shadow-md overflow-hidden relative group">
-                    <img src="https://readdy.ai/api/search-image?query=Elegant%20gold%20necklace%20with%20diamond%20pendant%20on%20a%20cream-colored%20silk%20background.%20The%20necklace%20features%20a%20delicate%20chain%20with%20a%20sophisticated%20design.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20sparkle%20of%20the%20diamonds%20and%20the%20warm%20glow%20of%20the%20gold.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish.&width=600&height=800&seq=123457&orientation=portrait"
-                        alt="Necklaces Collection" class="w-full h-[400px] object-cover object-top" />
+                    <img src="img/ネックレス.jpg" alt="Necklaces Collection"
+                        class="w-full h-[400px] object-cover object-top" />
                     <div
                         class="collection-overlay absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center p-6 text-white">
                         <h3 class="text-xl sm:text-2xl font-semibold mb-2">ネックレス</h3>
@@ -141,8 +165,7 @@
                 </div>
                 <!-- Collection 2 -->
                 <div class="collection-card rounded-lg shadow-md overflow-hidden relative group">
-                    <img src="https://readdy.ai/api/search-image?query=Luxurious%20diamond%20engagement%20ring%20and%20wedding%20band%20set%20on%20a%20cream-colored%20silk%20background.%20The%20rings%20feature%20brilliant%20cut%20diamonds%20in%20a%20sophisticated%20setting.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20sparkle%20of%20the%20diamonds.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish%2C%20showing%20fine%20details%20of%20the%20craftsmanship.&width=600&height=800&seq=123458&orientation=portrait"
-                        alt="Rings Collection" class="w-full h-[400px] object-cover object-top" />
+                    <img src="img/リング.jpg" alt="Rings Collection" class="w-full h-[400px] object-cover object-top" />
                     <div
                         class="collection-overlay absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center p-6 text-white">
                         <h3 class="text-xl sm:text-2xl font-semibold mb-2">リング</h3>
@@ -155,8 +178,8 @@
                 </div>
                 <!-- Collection 3 -->
                 <div class="collection-card rounded-lg shadow-md overflow-hidden relative group">
-                    <img src="https://readdy.ai/api/search-image?query=Elegant%20gold%20bracelet%20with%20diamond%20accents%20on%20a%20cream-colored%20silk%20background.%20The%20bracelet%20features%20a%20sophisticated%20design%20with%20intricate%20details.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20sparkle%20of%20the%20diamonds%20and%20the%20warm%20glow%20of%20the%20gold.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish%2C%20showing%20the%20fine%20craftsmanship.&width=600&height=800&seq=123459&orientation=portrait"
-                        alt="Bracelets Collection" class="w-full h-[400px] object-cover object-top" />
+                    <img src="img/ブレスレット.jpg" alt="Bracelets Collection"
+                        class="w-full h-[400px] object-cover object-top" />
                     <div
                         class="collection-overlay absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center p-6 text-white">
                         <h3 class="text-xl sm:text-2xl font-semibold mb-2">ブレスレット</h3>
@@ -169,8 +192,8 @@
                 </div>
                 <!-- Collection 4 -->
                 <div class="collection-card rounded-lg shadow-md overflow-hidden relative group">
-                    <img src="https://readdy.ai/api/search-image?query=Stunning%20diamond%20drop%20earrings%20on%20a%20cream-colored%20silk%20background.%20The%20earrings%20feature%20brilliant%20cut%20diamonds%20in%20an%20elegant%20setting.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20sparkle%20of%20the%20diamonds.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish%2C%20showing%20the%20intricate%20details%20and%20craftsmanship.&width=600&height=800&seq=123460&orientation=portrait"
-                        alt="Earrings Collection" class="w-full h-[400px] object-cover object-top" />
+                    <img src="img/イヤリング.jpg" alt="Earrings Collection"
+                        class="w-full h-[400px] object-cover object-top" />
                     <div
                         class="collection-overlay absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center p-6 text-white">
                         <h3 class="text-xl sm:text-2xl font-semibold mb-2">イヤリング</h3>
@@ -198,8 +221,8 @@
                     <!-- Product 1 -->
                     <div class="carousel-item w-56 sm:w-64 flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden">
                         <div class="h-48 sm:h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=Elegant%20diamond%20pendant%20necklace%20with%20a%20teardrop%20design%20on%20a%20cream-colored%20silk%20background.%20The%20pendant%20features%20a%20large%20center%20diamond%20surrounded%20by%20smaller%20diamonds.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20sparkle%20of%20the%20diamonds.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish.&width=400&height=400&seq=123461&orientation=squarish"
-                                alt="Diamond Pendant Necklace" class="w-full h-full object-cover object-top" />
+                            <img src="img/ダイヤモンドペンダントネックレス.jpg" alt="Diamond Pendant Necklace"
+                                class="w-full h-full object-cover object-top" />
                         </div>
                         <div class="p-3 sm:p-4">
                             <h3 class="text-base sm:text-lg font-medium mb-2">
@@ -217,8 +240,8 @@
                     <!-- Product 2 -->
                     <div class="carousel-item w-56 sm:w-64 flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden">
                         <div class="h-48 sm:h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=Luxurious%20emerald%20and%20diamond%20ring%20on%20a%20cream-colored%20silk%20background.%20The%20ring%20features%20a%20large%20center%20emerald%20surrounded%20by%20brilliant%20cut%20diamonds.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20rich%20green%20color%20of%20the%20emerald%20and%20the%20sparkle%20of%20the%20diamonds.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish.&width=400&height=400&seq=123462&orientation=squarish"
-                                alt="Emerald Diamond Ring" class="w-full h-full object-cover object-top" />
+                            <img src="img/エメラルドダイヤモンドリング.jpg" alt="Emerald Diamond Ring"
+                                class="w-full h-full object-cover object-top" />
                         </div>
                         <div class="p-3 sm:p-4">
                             <h3 class="text-base sm:text-lg font-medium mb-2">
@@ -236,8 +259,8 @@
                     <!-- Product 3 -->
                     <div class="carousel-item w-56 sm:w-64 flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden">
                         <div class="h-48 sm:h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=Elegant%20pearl%20and%20diamond%20drop%20earrings%20on%20a%20cream-colored%20silk%20background.%20The%20earrings%20feature%20lustrous%20pearls%20with%20diamond%20accents%20in%20a%20sophisticated%20design.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20natural%20glow%20of%20the%20pearls%20and%20the%20sparkle%20of%20the%20diamonds.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish.&width=400&height=400&seq=123463&orientation=squarish"
-                                alt="Pearl Diamond Earrings" class="w-full h-full object-cover object-top" />
+                            <img src="img/パールダイヤモンドイヤリング.jpg" alt="Pearl Diamond Earrings"
+                                class="w-full h-full object-cover object-top" />
                         </div>
                         <div class="p-3 sm:p-4">
                             <h3 class="text-base sm:text-lg font-medium mb-2">
@@ -255,8 +278,8 @@
                     <!-- Product 4 -->
                     <div class="carousel-item w-56 sm:w-64 flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden">
                         <div class="h-48 sm:h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=Luxurious%20gold%20and%20diamond%20bangle%20bracelet%20on%20a%20cream-colored%20silk%20background.%20The%20bracelet%20features%20an%20intricate%20design%20with%20diamond%20accents%20throughout.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20warm%20glow%20of%20the%20gold%20and%20the%20sparkle%20of%20the%20diamonds.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish.&width=400&height=400&seq=123464&orientation=squarish"
-                                alt="Diamond Bangle Bracelet" class="w-full h-full object-cover object-top" />
+                            <img src="img/ダイヤモンドバングルブレスレット.jpg" alt="Diamond Bangle Bracelet"
+                                class="w-full h-full object-cover object-top" />
                         </div>
                         <div class="p-3 sm:p-4">
                             <h3 class="text-base sm:text-lg font-medium mb-2">
@@ -274,8 +297,8 @@
                     <!-- Product 5 -->
                     <div class="carousel-item w-56 sm:w-64 flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden">
                         <div class="h-48 sm:h-64 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=Stunning%20sapphire%20and%20diamond%20necklace%20on%20a%20cream-colored%20silk%20background.%20The%20necklace%20features%20a%20large%20center%20sapphire%20surrounded%20by%20brilliant%20cut%20diamonds%20in%20an%20elegant%20setting.%20The%20lighting%20is%20soft%20and%20glamorous%2C%20highlighting%20the%20deep%20blue%20color%20of%20the%20sapphire%20and%20the%20sparkle%20of%20the%20diamonds.%20Professional%20jewelry%20photography%20with%20perfect%20focus%20and%20high-end%20finish.&width=400&height=400&seq=123465&orientation=squarish"
-                                alt="Sapphire Diamond Necklace" class="w-full h-full object-cover object-top" />
+                            <img src="img/サファイアダイヤモンドネックレス.jpg" alt="Sapphire Diamond Necklace"
+                                class="w-full h-full object-cover object-top" />
                         </div>
                         <div class="p-3 sm:p-4">
                             <h3 class="text-base sm:text-lg font-medium mb-2">
@@ -308,8 +331,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8 lg:pr-12">
-                    <img src="https://readdy.ai/api/search-image?query=Elegant%20jewelry%20artisan%20working%20on%20a%20fine%20piece%20in%20a%20luxury%20atelier.%20The%20craftsperson%20is%20focused%20on%20setting%20diamonds%20in%20a%20gold%20piece.%20The%20workshop%20has%20a%20sophisticated%20ambiance%20with%20soft%2C%20warm%20lighting%20highlighting%20the%20craftsmanship.%20Professional%20photography%20with%20perfect%20focus%20showing%20the%20detailed%20work%20and%20dedication%20to%20the%20art%20of%20jewelry%20making.&width=800&height=600&seq=123466&orientation=landscape"
-                        alt="Brand Story" class="w-full h-auto rounded-lg shadow-lg" />
+                    <img src="img/about2.jpg" alt="Brand Story" class="w-full h-auto rounded-lg shadow-lg" />
                 </div>
                 <div class="w-full md:w-1/2">
                     <h2 class="text-3xl sm:text-4xl font-semibold mb-4 sm:mb-6">完璧を追求する情熱</h2>

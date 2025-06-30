@@ -1,4 +1,4 @@
-        /* Smooth scrolling for the entire document */
+/* Smooth scrolling for the entire document */
         html {
             scroll-behavior: smooth;
         }
@@ -20,8 +20,87 @@
             font-family: "Playfair Display", serif;
         }
 
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hero-slideshow .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 1.2s ease-in-out, transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1;
+            will-change: transform, opacity;
+        }
+
+        /* Active slide - currently visible */
+        .hero-slideshow .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 2;
+        }
+
+        /* Slide coming from right - slides over the current slide */
+        .hero-slideshow .slide.slide-from-right {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 3;
+        }
+
+        /* Current slide stays in place - will be covered by new slide */
+        .hero-slideshow .slide.stay-in-place {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 1;
+        }
+
+        /* Initial position for new slides - positioned off-screen right */
+        .hero-slideshow .slide.prepare-right {
+            opacity: 1;
+            transform: translateX(100%);
+            z-index: 3;
+            transition: none; /* No transition for initial positioning */
+        }
+
+        /* Fade out the old slide after new slide covers it */
+        .hero-slideshow .slide.fade-out-under {
+            opacity: 0;
+            transform: translateX(0);
+            z-index: 1;
+            transition: opacity 0.8s ease-in-out 0.4s; /* Delayed fade out */
+        }
+
+        /* Slide dots */
+        .slide-dot {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-dot.active {
+            background-color: #d4af37 !important;
+            opacity: 1 !important;
+        }
+
+        /* Hardware acceleration for smooth performance */
+        .hero-slideshow .slide {
+            backface-visibility: hidden;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        /* Remove the old hero-section background and update */
         .hero-section {
-            background-image: url("img/bg.jpg");
+            /* background-image removed - now using slideshow */
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
